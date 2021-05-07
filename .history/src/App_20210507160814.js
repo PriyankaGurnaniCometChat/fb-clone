@@ -5,9 +5,6 @@ function App() {
     <div className="app">
       <h1>FB-CLONE</h1>
       {/* {Header } */}
-      {/* {App body} */}
-      {/* {feed} */}
-      {/* {Widgets} */}
 
     </div>
   );
