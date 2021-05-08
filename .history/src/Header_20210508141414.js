@@ -7,7 +7,7 @@ function Header() {
             <div className="header__left">
                 <img src="https://imgur.com/download/VgkNYXI/facebook+logo+png+to+use" alt="logo" />
             </div>
-            <div className="header__right"></div>
+            <div className="header_right"></div>
         </div>
     );
 }

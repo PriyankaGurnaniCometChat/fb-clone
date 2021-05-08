@@ -4,10 +4,10 @@ import "./Header.css";
 function Header() {
     return (
         <div className="header">
-            <div className="header__left">
+            <div className="left">
                 <img src="https://imgur.com/download/VgkNYXI/facebook+logo+png+to+use" alt="logo" />
             </div>
-            <div className="header__right"></div>
+            <div className="header_right"></div>
         </div>
     );
 }
