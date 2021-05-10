@@ -2,7 +2,6 @@ import './App.css';
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import SidebarRow from './SidebarRow';
-import Feed from "./Feed";
 
 
 function App() {
@@ -12,9 +11,9 @@ function App() {
       <Header />
       <div className="app__body">
         <Sidebar />
-        <Feed />
-
       </div>
+      {/* {App body} */}
+      {/* {feed} */}
       {/* {Widgets} */}
 
     </div>
