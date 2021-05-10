@@ -1,7 +1,5 @@
 import './App.css';
 import Header from "./Header";
-import Sidebar from "./Sidebar";
-import SidebarRow from './SidebarRow';
 
 
 function App() {
@@ -10,8 +8,7 @@ function App() {
 
       <Header />
       <div className="app__body">
-        <Sidebar />
-        <SidebarRow />
+
       </div>
       {/* {App body} */}
       {/* {feed} */}
