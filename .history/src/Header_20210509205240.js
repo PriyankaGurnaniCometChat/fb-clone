@@ -19,7 +19,7 @@ function Header() {
                 <img src="https://imgur.com/download/VgkNYXI/facebook+logo+png+to+use" alt="logo" />
                 <div className="header__input">
                     <SearchIcon />
-                    <input placeholder="Search Facebook" type="text" />
+                    <input type="text" />
                 </div>
                 <div className="header__center">
                     <div className="header__option
