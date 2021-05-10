@@ -1,0 +1,9 @@
+.header__left > img {
+    height: 40px;
+}
+.header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+
+}

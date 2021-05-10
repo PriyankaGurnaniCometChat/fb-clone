@@ -1,0 +1,24 @@
+.header__left > img {
+    height: 40px;
+}
+.header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    background-color: white;
+    z-index: 100;
+}
+.header__left {
+    display: flex;
+    justify-content: space-evenly;
+}
+.header__input {
+    display: flex;
+    align-items: center;
+    background: color #eff2f5;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 33px;
+
+}

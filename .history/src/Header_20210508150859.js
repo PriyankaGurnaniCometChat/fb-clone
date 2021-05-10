@@ -6,11 +6,6 @@ import FlagIcon from '@material-ui/icons/Flag';
 import SubscriptionsOutlinedIcon from '@material-ui/icons/SubscriptionsOutlined';
 import StorefrontOutlinedIcon from '@material-ui/icons/StorefrontOutlined';
 import SupervisedUserCircleRoundedIcon from '@material-ui/icons/SupervisedUserCircleRounded';
-import { Avatar, IconButton } from "@material-ui/core";
-import AddIcon from '@material-ui/icons/Add';
-import ForumIcon from '@material-ui/icons/Forum';
-import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function Header() {
     return (
@@ -21,7 +16,7 @@ function Header() {
                     <SearchIcon />
                     <input type="text" />
                 </div>
-                <div className="header__center">
+                <div className="header__middle">
                     <div className="header__option">
                         <HomeIcon fontSize="large" />
                     </div>
@@ -50,24 +45,11 @@ function Header() {
                 </div>
 
 
+
+
+
             </div>
             <div className="header__right"></div>
-            <div className="header__info">
-                <Avatar />
-                <h4>Randy Steele</h4>
-            </div>
-            <IconButton>
-                <AddIcon />
-            </IconButton>
-            <IconButton>
-                <ForumIcon />
-            </IconButton>
-            <IconButton>
-                <NotificationsActiveIcon />
-            </IconButton>
-            <IconButton>
-                <ExpandMoreIcon />
-            </IconButton>
         </div>
     );
 }

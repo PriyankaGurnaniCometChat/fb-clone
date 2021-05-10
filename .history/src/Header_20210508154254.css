@@ -51,7 +51,7 @@
         cursor: pointer;
     }
 
-    .header__option:hover {
+    .header__center:hover {
         background-color: #eff2f5;
         border-radius: 10px;
         align-items: center;
