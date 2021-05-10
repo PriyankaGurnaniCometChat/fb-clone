@@ -1,18 +1,18 @@
-.sidebarRow{
+.SidebarRow{
     display: flex;
     align-items: center;
     padding: 10px;
     cursor: pointer;
 }
-.sidebarRow:hover {
+.SidebarRow:hover {
     background-color: lightgray;
     border-radius: 10px;
 }
-.sidebarRow > h4 {
+.SidebarRow > h4 {
     margin-left: 20px;
     font-weight: 600;
 }
-.sidebarRow > .MuiSvgIcon-root {
+.SidebarRow > .MuiSvgIcon-root {
     font-size: xx-large;
     color: #2e81f4
 }
