@@ -16,10 +16,10 @@ function Sidebar() {
         <div className="sidebar">
             <SidebarRow src="https://pbs.twimg.com/profile_images/1293587300669108231/09g3ENV9_400x400.jpg" title="Randy Steele" />
             <SidebarRow Icon={LocalHospitalIcon} title="Covid-19 Information Center" />
-            <SidebarRow Icon={EmojiFlagsIcon} title="pages" />
+            <SidebarRow Icon={EmojiFlagsIcon} title={pages} />
             <SidebarRow Icon={PeopleIcon} title="Friends" />
             <SidebarRow Icon={ChatIcon} title="Messenger" />
-            <SidebarRow Icon={StorefrontIcon} title="Marketplace" />
+            <SidebarRow Icon={StoreFrontIcon} title="Marketplace" />
             <SidebarRow Icon={VideoLibraryIcon} title="Videos" />
             <SidebarRow Icon={ExpandMoreOutlined} title="Marketplace" />
 
