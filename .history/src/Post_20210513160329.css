@@ -49,18 +49,5 @@
 
 .post__option {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    flex: 1;
+    
 }
-
-.post__option > p {
-    margin-left: 10px;
-}
-
-.post__option:hover{
-    background-color: #eff2f5;
-    border-radius: 10px
-}
-
