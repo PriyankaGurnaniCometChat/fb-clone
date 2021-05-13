@@ -12,8 +12,6 @@ const MessageSender = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setInput("");
-        setImageUrl("");
     };
     return (
         <div className="messageSender">
@@ -24,8 +22,7 @@ const MessageSender = () => {
                         onChange={(e) => setInput(e.target.value)}
                         className="messageSender__input"
                         placeholder={"What's on your mind?"} />
-                    <input value={imageUrl}
-                        onChange={(e) => setImageUrl(e.target.value)}
+                    <input value={imageUrl} onChange={(e) => setInput(e.target.value)}
                         placeholder="image URl (Optional)" />
                     <button onClick={handleSubmit} type="submit">
                         Hidden Submit
