@@ -17,21 +17,6 @@
     margin-right: 10px;
 }
 
-.post__topInfo > h3 {
+.post__topInfo {
     font-size: medium;
-}
-
-.post__topInfo > p{
-    font-size: small;
-    color: gray;
-}
-
-.post__image > img {
-    width: 100%;
-}
-
-.post__bottom {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 15px 25px;
 }

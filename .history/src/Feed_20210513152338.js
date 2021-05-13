@@ -1,7 +1,6 @@
 import React from 'react';
 import MessageSender from './MessageSender';
 import StoryReel from "./StoryReel";
-import Post from "./Post";
 
 
 function Feed() {

@@ -30,20 +30,9 @@ const Post = ({ profilePic, image, username, timestamp, message }) => {
                     <p>Like</p>
                 </div>
                 <div className="post__option">
-                    <ChatBubbleOutlineIcon />
-                    <p>Comment</p>
+                    <ThumbUpIcon />
+                    <p>Like</p>
                 </div>
-                <div className="post__option">
-                    <NearMeIcon />
-                    <p>Share</p>
-                </div>
-
-                <div className="post__option">
-                    <AccountCircleIcon />
-                    <ExpandMoreOutlined />
-                </div>
-
-
             </div>
         </div>
     );
