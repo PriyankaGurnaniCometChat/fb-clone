@@ -6,7 +6,6 @@ import Feed from "./Feed";
 
 
 function App() {
-  const user = "randy";
   return (
     <div className="app">
       {!user ? (
