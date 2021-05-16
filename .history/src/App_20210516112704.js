@@ -7,7 +7,7 @@ import Login from "./Login";
 
 
 function App() {
-  const user = null;
+  const user = "randy";
   return (
     <div className="app">
       {!user ? (

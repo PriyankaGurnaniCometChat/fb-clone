@@ -3,11 +3,10 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import SidebarRow from './SidebarRow';
 import Feed from "./Feed";
-import Login from "./Login";
 
 
 function App() {
-  const user = null;
+  const user = "randy";
   return (
     <div className="app">
       {!user ? (
