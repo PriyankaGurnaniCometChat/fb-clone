@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import SidebarRow from './SidebarRow';
 import Feed from "./Feed";
 import Login from "./Login";
-import { useStateValue } from "./StateProvider";
+import useStateValue from "./StateProvider";
 
 
 function App() {

@@ -58,7 +58,7 @@ function Header() {
             </div>
             <div className="header__right"></div>
             <div className="header__info">
-                <Avatar src={user.photoURL} />
+                <Avatar src={user.photo.url} />
                 <h4>{user.displayName}</h4>
             </div>
             <IconButton>
