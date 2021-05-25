@@ -1,0 +1,8 @@
+.cometchatui {
+    text-align: right;
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    display: flexbox;
+    align-content: flex-end;
+}
