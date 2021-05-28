@@ -2,25 +2,31 @@
 // import { Link, useHistory } from 'react-router-dom';
 // import firebase from 'firebase/app';
 // import 'firebase/auth';
-// import { loginCometChatUser } from './CometChat';
+// import { loginCometChatUser, registerCometChatUser } from './CometChat';
 // const initialState = {
+//     name: '',
 //     email: '',
 //     password: '',
+//     confirmPassword: '',
 // };
 // const reducer = (state, action) => {
 //     switch (action.type) {
+//         case 'name':
+//             return { ...state, name: action.payload };
 //         case 'email':
 //             return { ...state, email: action.payload };
 //         case 'password':
 //             return { ...state, password: action.payload };
+//         case 'confirmPassword':
+//             return { ...state, confirmPassword: action.payload };
 //         default:
 //             throw new Error();
 //     }
 // };
-// export default function LoginPage() {
+// export default function RegisterPage() {
 //     const [state, dispatch] = useReducer(reducer, initialState);
 //     const [error, setError] = useState('');
-//     let history = useHistory();
+//     const history = useHistory();
 //     const handleOnChange = (evt) => {
 //         const { target } = evt;
 //         dispatch({
@@ -28,18 +34,23 @@
 //             payload: target.value,
 //         });
 //     };
-//     const loginUser = (evt) => {
+//     const registerUser = (evt) => {
 //         evt.preventDefault();
+//         if (state.password !== state.confirmPassword) {
+//             setError('Error: Passwords do not match.');
+//             return;
+//         }
 //         firebase
 //             .auth()
-//             .signInWithEmailAndPassword(state.email, state.password)
-//             .then((doc) => {
-//                 loginCometChatUser(doc.user.uid);
+//             .createUserWithEmailAndPassword(state.email, state.password)
+//             .then(async (doc) => {
+//                 await registerCometChatUser(state.name, doc.user.uid);
+//                 await loginCometChatUser(doc.user.uid);
 //                 history.push('/');
 //             })
 //             .catch((err) => {
 //                 setError(err.message);
-//                 console.log(`Unable to login: ${err.message}`);
+//                 console.log(`Unable to register user: ${err.message}`);
 //             });
 //     };
 //     return (
@@ -52,12 +63,27 @@
 //                 </div>
 //                 <form
 //                     className="border-gray-300 border rounded-sm my-4 p-4"
-//                     onSubmit={loginUser}
+//                     onSubmit={registerUser}
 //                 >
-//                     <h1 className="font-bold">Sign-In</h1>
+//                     <h1 className="font-bold">Create Account</h1>
 //                     {error && (
 //                         <p className="text-red-500 font-bold text-base py-2 ">{error}</p>
 //                     )}
+//                     <label htmlFor="name" className="font-bold text-base md:ml-1">
+//                         Name
+//           </label>
+//                     <input
+//                         id="name"
+//                         name="name"
+//                         type="name"
+//                         autoComplete="name"
+//                         required
+//                         onChange={handleOnChange}
+//                         value={state.name}
+//                         className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
+//                         placeholder="Name"
+//                         minLength={3}
+//                     />
 //                     <label htmlFor="email" className="font-bold text-base md:ml-1">
 //                         Email
 //           </label>
@@ -69,7 +95,7 @@
 //                         required
 //                         onChange={handleOnChange}
 //                         value={state.email}
-//                         className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 text-base"
+//                         className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
 //                         placeholder="Email"
 //                     />
 //                     <label htmlFor="password" className="font-bold text-base md:ml-1">
@@ -83,14 +109,30 @@
 //                         required
 //                         onChange={handleOnChange}
 //                         value={state.password}
-//                         className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 text-base"
+//                         className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
 //                         placeholder="Password"
+//                         minLength={6}
+//                     />
+//                     <label htmlFor="password" className="font-bold text-base md:ml-1">
+//                         Re-Enter Password
+//           </label>
+//                     <input
+//                         id="confirmPassword"
+//                         name="confirmPassword"
+//                         type="password"
+//                         autoComplete="password"
+//                         required
+//                         onChange={handleOnChange}
+//                         value={state.confirmPassword}
+//                         className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
+//                         placeholder="Re-Enter Password"
+//                         minLength={6}
 //                     />
 //                     <button
 //                         type="submit"
 //                         className="bg-gradient-to-t from-yellow-300 to-yellow-100 text-base p-1 w-full rounded-sm my-3 border border-gray-500"
 //                     >
-//                         Continue
+//                         Create your Amazon account
 //           </button>
 //                     <p className="text-base tracking-none">
 //                         By continuing, you agree to Amazon's{' '}
@@ -103,14 +145,14 @@
 //             </a>
 //             .
 //           </p>
+//                     <div className="w-1/2 mx-auto mt-4 border-t-2 border-gray-100"></div>
+//                     <p className="text-base">
+//                         Alread have an account?{' '}
+//                         <Link to="login" className="text-blue-500">
+//                             Sign In
+//             </Link>
+//                     </p>
 //                 </form>
-//                 <p className="text-center text-base text-gray-500">New to Amazon?</p>
-//                 <button
-//                     type="submit"
-//                     className="w-full bg-gradient-to-t from-gray-200 to-white text-base p-1 rounded-sm my-3 border border-gray-500"
-//                 >
-//                     <Link to="/register">Create your Amazon account</Link>
-//                 </button>
 //             </div>
 //         </div>
 //     );
