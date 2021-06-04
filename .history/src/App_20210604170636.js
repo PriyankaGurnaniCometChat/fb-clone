@@ -1,4 +1,4 @@
-import './styles/App.css';
+import '.styles/App.css';
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Feed from "./components/Feed";

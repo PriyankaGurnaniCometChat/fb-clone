@@ -1,8 +1,8 @@
-import './styles/App.css';
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import Feed from "./components/Feed";
-import Login from "./components/Login";
+import '.styles/App.css';
+import Header from ".components/Header";
+import Sidebar from ".components/Sidebar";
+import Feed from ".components/Feed";
+import Login from ".components/Login";
 import { useStateValue } from './adapters/StateProvider';
 
 import { Route, BrowserRouter, Redirect } from 'react-router-dom';

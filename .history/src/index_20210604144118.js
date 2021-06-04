@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
+import '.styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { StateProvider } from './adapters/StateProvider';
-import reducer, { initialState } from "./reducer/reducer";
+import { StateProvider } from ".adapters/StateProvider";
+import reducer, { initialState } from ".reducer/reducer";
 import { CometChat } from '@cometchat-pro/chat';
 
 const appID = "33563bcde5404f5"
