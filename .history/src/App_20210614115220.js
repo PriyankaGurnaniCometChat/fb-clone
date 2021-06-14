@@ -18,7 +18,7 @@ function App() {
     () => {
       console.log("Initialization completed successfully");
       const authKey = "b0b4c73e2a76fabf93e2b95b13d8c6fabe21e87b";
-      const uid = "randysteele";
+      const uid = randysteele;
 
       CometChat.login(uid, authKey).then(
         user => {

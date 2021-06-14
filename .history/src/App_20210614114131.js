@@ -4,7 +4,7 @@ import Sidebar from "./components/Sidebar";
 import Feed from "./components/Feed";
 import Login from "./components/Login";
 import { useStateValue } from './adapters/StateProvider';
-import { provider } from "./adapters/firebase"
+import { provider } from "/adapters/authcontext"
 import { Route, BrowserRouter, Redirect } from 'react-router-dom';
 import { CometChatUI } from "./CometChatWorkspace/src";
 import { CometChat } from "@cometchat-pro/chat";
@@ -18,7 +18,7 @@ function App() {
     () => {
       console.log("Initialization completed successfully");
       const authKey = "b0b4c73e2a76fabf93e2b95b13d8c6fabe21e87b";
-      const uid = "randysteele";
+      const uid = provider;
 
       CometChat.login(uid, authKey).then(
         user => {
