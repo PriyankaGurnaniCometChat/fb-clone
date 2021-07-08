@@ -1,0 +1,17 @@
+.app {
+    background-color: #f1f2f5;
+}
+
+.app__body {
+    display: flex;
+    padding: 20px;
+    margin: 10px;
+}
+
+.cometChatUI {
+    margin: 20px;
+    padding: 40px 150px;
+    text-align: center;
+    width: 75%;
+    height: 100%;
+}
