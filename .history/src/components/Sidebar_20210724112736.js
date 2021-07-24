@@ -15,7 +15,8 @@ import { useHistory } from 'react-router-dom'
 function Sidebar() {
     // const [channels, setChannels] = useState([])
     const [user, setUser] = useState(null)
-    const [setDms] = useState([])
+    const [dms, setDms] = useState([])
+    const history = useHistory()
 
     const getDirectMessages = () => {
         const limit = 10

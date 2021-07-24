@@ -16,6 +16,7 @@ function Sidebar() {
     // const [channels, setChannels] = useState([])
     const [user, setUser] = useState(null)
     const [setDms] = useState([])
+    const history = useHistory()
 
     const getDirectMessages = () => {
         const limit = 10

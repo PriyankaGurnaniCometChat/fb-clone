@@ -10,7 +10,7 @@ import firebase from "../firebase";
 
 
 const MessageSender = () => {
-    const [{ user }, dispatch] = useState(false);
+    const [{ user }] = useState(false);
     const [input, setInput] = useState('')
     const [imageUrl, setImageUrl] = useState('');
 

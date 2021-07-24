@@ -4,33 +4,18 @@ import { Avatar } from "@material-ui/core"
 import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
-import { useStateValue } from "../adapters/StateProvider";
-import db from "../adapters/firebase";
-import firebase from "firebase";
+import db from "../firebase";
+import firebase from "../firebase";
+
 
 
 const MessageSender = () => {
-    const [{ user }, dispatch] = useStateValue();
+    const [{ user }] = useState(false);
     const [input, setInput] = useState('')
     const [imageUrl, setImageUrl] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let authKey = "AUTH_KEY";
-        var uid = phone;
-        var name = userName + " (" + phone + ")";
-
-        var user = new CometChat.User(uid);
-
-        user.setName(name);
-
-        CometChat.createUser(user, authKey).then(
-            user => {
-                console.log("user created", user);
-            }, error => {
-                console.log("error", error);
-            }
-        )
 
         db.collection('posts').add({
             message: input,
@@ -46,12 +31,12 @@ const MessageSender = () => {
     return (
         <div className="messageSender">
             <div className="messageSender__top">
-                <Avatar src={user.photoURL} />
+                <Avatar src={user?.photoURL} />
                 <form>
                     <input value={input}
                         onChange={(e) => setInput(e.target.value)}
                         className="messageSender__input"
-                        placeholder={`What's on your mind, ${user.displayName}?`} />
+                        placeholder={`What's on your mind, ${user?.displayName}?`} />
                     <input value={imageUrl}
                         onChange={(e) => setImageUrl(e.target.value)}
                         placeholder="image URl (Optional)" />

@@ -1,5 +1,6 @@
 import '../styles/Sidebar.css'
 import { useState, useEffect } from 'react'
+import { auth } from '../firebase'
 import SidebarRow from "../components/SidebarRow";
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import EmojiFlagsIcon from "@material-ui/icons/EmojiFlags";
@@ -15,7 +16,8 @@ import { useHistory } from 'react-router-dom'
 function Sidebar() {
     // const [channels, setChannels] = useState([])
     const [user, setUser] = useState(null)
-    const [setDms] = useState([])
+    const [dms, setDms] = useState([])
+    const history = useHistory()
 
     const getDirectMessages = () => {
         const limit = 10
@@ -47,11 +49,12 @@ function Sidebar() {
     //         .catch((error) => console.log(error.message))
     // }
     const logOut = () => {
-        CometChat.logout().then(
+        CometChat.logout().then(() => {
+            localStorage.removeItem('user')
+        }
             () => {
                 console.log("Logout completed successfully");
                 setUser(null);
-                localStorage.removeItem('user');
             },
             (error) => {
                 console.log("Logout failed with exception:", { error });
