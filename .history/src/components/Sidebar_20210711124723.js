@@ -14,7 +14,7 @@ import { CometChat } from '@cometchat-pro/chat'
 import { useHistory } from 'react-router-dom'
 
 function Sidebar() {
-    // const [channels, setChannels] = useState([])
+    const [channels, setChannels] = useState([])
     const [user, setUser] = useState(null)
     const [dms, setDms] = useState([])
     const history = useHistory()
@@ -31,38 +31,39 @@ function Sidebar() {
             .then((userList) => setDms(userList))
             .catch((error) => {
                 console.log('User list fetching failed with error:', error)
-
-
             })
     }
 
+    const getChannels = () => {
+        const limit = 30
+        const groupsRequest = new CometChat.GroupsRequestBuilder()
+            .setLimit(limit)
+            .joinedOnly(true)
+            .build()
 
-    // const logOut = () => {
-    //     auth
-    //         .signOut()
-    //         .then(() => {
-    //             localStorage.removeItem('user')
-    //             CometChat.logout()
-    //             history.push('/login')
-
-    //         })
-    //         .catch((error) => console.log(error.message))
-    // }
-    const logOut = () => {
-        CometChat.logout().then(
-            () => {
-                console.log("Logout completed successfully");
-                setUser(null);
-            },
-            (error) => {
-                console.log("Logout failed with exception:", { error });
-            }
-        );
+        groupsRequest
+            .fetchNext()
+            .then((groupList) => setChannels(groupList))
+            .catch((error) => {
+                console.log('Groups list fetching failed with error', error)
+            })
     }
+
+    const logOut = () => {
+        auth
+            .signOut()
+            .then(() => {
+                localStorage.removeItem('user')
+                history.push('/login')
+            })
+            .catch((error) => console.log(error.message))
+    }
+
     useEffect(() => {
         const data = localStorage.getItem('user')
         setUser(JSON.parse(data))
 
+        getChannels()
         getDirectMessages()
     }, [])
 

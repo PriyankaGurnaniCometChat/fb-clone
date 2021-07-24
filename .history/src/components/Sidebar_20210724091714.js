@@ -48,17 +48,17 @@ function Sidebar() {
     //         })
     //         .catch((error) => console.log(error.message))
     // }
-    const logOut = () => {
-        CometChat.logout().then(
-            () => {
-                console.log("Logout completed successfully");
-                setUser(null);
-            },
-            (error) => {
-                console.log("Logout failed with exception:", { error });
-            }
-        );
-    }
+
+    CometChat.logout().then(
+        () => {
+            console.log("Logout completed successfully");
+            setUser(null);
+        },
+        (error) => {
+            console.log("Logout failed with exception:", { error });
+        }
+    );
+
     useEffect(() => {
         const data = localStorage.getItem('user')
         setUser(JSON.parse(data))

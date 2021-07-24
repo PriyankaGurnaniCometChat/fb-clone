@@ -37,28 +37,24 @@ function Sidebar() {
     }
 
 
-    // const logOut = () => {
-    //     auth
-    //         .signOut()
-    //         .then(() => {
-    //             localStorage.removeItem('user')
-    //             CometChat.logout()
-    //             history.push('/login')
-
-    //         })
-    //         .catch((error) => console.log(error.message))
-    // }
     const logOut = () => {
-        CometChat.logout().then(
-            () => {
-                console.log("Logout completed successfully");
-                setUser(null);
-            },
-            (error) => {
-                console.log("Logout failed with exception:", { error });
-            }
-        );
+        auth
+            .signOut()
+            .then(() => {
+                localStorage.removeItem('user')
+                history.push('/login')
+                const logoutCometChatUser = async () => {
+                    try {
+                        await CometChat.logout();
+                        console.log('Logout Successful:');
+                    } catch (error) {
+                        console.log('Login failed with exception:', { error });
+                    }
+                };
+            })
+            .catch((error) => console.log(error.message))
     }
+
     useEffect(() => {
         const data = localStorage.getItem('user')
         setUser(JSON.parse(data))
