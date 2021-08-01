@@ -53,8 +53,8 @@ function Login() {
 
         CometChat.createUser(user, authKey)
             .then(() => {
-                loginCometChat(user, authKey)
                 setLoading(false)
+                alert('You are now signed up, click the button again to login')
             })
             .catch((error) => {
                 console.log(error)
@@ -68,7 +68,7 @@ function Login() {
             <div className="login__logo">
                 <img src="https://logodix.com/logo/51169.jpg" alt="fb Logo" />
                 <br></br><h4>Sign in to CometChat</h4>
-                <button onClick={signIn}>
+                <button onClick={loginCometChat}>
                     <br></br>{!loading ? 'Sign In With Google' : <div id="loading"></div>}
                 </button>
             </div>

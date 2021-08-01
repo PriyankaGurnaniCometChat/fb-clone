@@ -26,6 +26,7 @@ function App() {
         <main className="app__body">
           <Sidebar />
           <Component {...props} />
+          <h1>Inbox</h1>
 
           <div>
             <div style={{ width: '800px', height: '800px' }}>

@@ -34,34 +34,37 @@ function Login() {
                 setLoading(false)
             })
             .catch((error) => {
-                if (error.code === 'ERR_UID_NOT_FOUND') {
-                    signUpWithCometChat(data)
-                } else {
-                    console.log(error)
-                    setLoading(false)
-                    alert(error.message)
-                }
-            })
-    }
-
-    const signUpWithCometChat = (data) => {
-        const authKey = cometChat.AUTH_KEY
-        const user = new CometChat.User(data.uid)
-
-        user.setName(data.displayName)
-        user.setAvatar(data.photoURL)
-
-        CometChat.createUser(user, authKey)
-            .then(() => {
-                loginCometChat(user, authKey)
-                setLoading(false)
-            })
-            .catch((error) => {
+                //if
+                // (error.code === 'ERR_UID_NOT_FOUND') 
+                // {
+                //     signUpWithCometChat(data)
+                // } else {
                 console.log(error)
                 setLoading(false)
                 alert(error.message)
             })
     }
+    // })
+    // }
+
+    // const signUpWithCometChat = (data) => {
+    //     const authKey = cometChat.AUTH_KEY
+    //     const user = new CometChat.User(data.uid)
+
+    //     user.setName(data.displayName)
+    //     user.setAvatar(data.photoURL)
+
+    //     CometChat.createUser(user, authKey)
+    //         .then(() => {
+    //             setLoading(false)
+    //             alert('You are now signed up, click the button again to login')
+    //         })
+    //         .catch((error) => {
+    //             console.log(error)
+    //             setLoading(false)
+    //             alert(error.message)
+    //         })
+    // }
 
     return (
         <div className="login">

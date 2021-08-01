@@ -26,10 +26,11 @@ function App() {
         <main className="app__body">
           <Sidebar />
           <Component {...props} />
-
+          <h1>Inbox</h1>
+          <br></br><br></br><br></br>
           <div>
             <div style={{ width: '800px', height: '800px' }}>
-              <h1>Inbox</h1><CometChatUI />
+              <CometChatUI />
             </div>
           </div>
         </main>

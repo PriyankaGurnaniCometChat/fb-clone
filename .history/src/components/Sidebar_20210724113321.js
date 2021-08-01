@@ -50,7 +50,6 @@ function Sidebar() {
                 console.log("Logout completed successfully");
                 setUser(null);
                 localStorage.removeItem('user');
-                window.location.href = '/'
             },
             (error) => {
                 console.log("Logout failed with exception:", { error });

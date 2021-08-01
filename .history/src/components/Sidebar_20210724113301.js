@@ -14,6 +14,7 @@ import { CometChat } from '@cometchat-pro/chat'
 function Sidebar() {
     // const [channels, setChannels] = useState([])
     const [user, setUser] = useState(null)
+    const [setDms] = useState([])
 
     // const getDirectMessages = () => {
     //     const limit = 10
@@ -50,7 +51,6 @@ function Sidebar() {
                 console.log("Logout completed successfully");
                 setUser(null);
                 localStorage.removeItem('user');
-                window.location.href = '/'
             },
             (error) => {
                 console.log("Logout failed with exception:", { error });

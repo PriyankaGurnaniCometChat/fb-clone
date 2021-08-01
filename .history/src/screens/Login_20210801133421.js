@@ -53,8 +53,9 @@ function Login() {
 
         CometChat.createUser(user, authKey)
             .then(() => {
-                loginCometChat(user, authKey)
+                loginCometChat(user)
                 setLoading(false)
+                console.log(user)
             })
             .catch((error) => {
                 console.log(error)

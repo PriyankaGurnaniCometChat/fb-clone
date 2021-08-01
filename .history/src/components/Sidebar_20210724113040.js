@@ -14,23 +14,24 @@ import { CometChat } from '@cometchat-pro/chat'
 function Sidebar() {
     // const [channels, setChannels] = useState([])
     const [user, setUser] = useState(null)
+    const [setDms] = useState([])
 
-    // const getDirectMessages = () => {
-    //     const limit = 10
-    //     const usersRequest = new CometChat.UsersRequestBuilder()
-    //         .setLimit(limit)
-    //         .friendsOnly(true)
-    //         .build()
+    const getDirectMessages = () => {
+        const limit = 10
+        const usersRequest = new CometChat.UsersRequestBuilder()
+            .setLimit(limit)
+            .friendsOnly(true)
+            .build()
 
-    //     usersRequest
-    //         .fetchNext()
-    //         .then((userList) => setDms(userList))
-    //         .catch((error) => {
-    //             console.log('User list fetching failed with error:', error)
+        usersRequest
+            .fetchNext()
+            .then((userList) => setDms(userList))
+            .catch((error) => {
+                console.log('User list fetching failed with error:', error)
 
 
-    //         })
-    // }
+            })
+    }
 
 
     // const logOut = () => {
@@ -50,17 +51,17 @@ function Sidebar() {
                 console.log("Logout completed successfully");
                 setUser(null);
                 localStorage.removeItem('user');
-                window.location.href = '/'
             },
             (error) => {
                 console.log("Logout failed with exception:", { error });
             }
         );
     }
-    useEffect(() => {
+    useEffect((getDirectMessages) => {
         const data = localStorage.getItem('user')
         setUser(JSON.parse(data))
 
+        getDirectMessages()
     }, [])
 
     return (

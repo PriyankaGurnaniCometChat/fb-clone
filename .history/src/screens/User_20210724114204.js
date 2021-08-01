@@ -344,9 +344,7 @@ function User() {
         listFriends(id)
 
         setCurrentUser(JSON.parse(localStorage.getItem('user')))
-    }, [getMessages, listenForCall, listenForMessage, id])
-
-
+    }, [id])
 
     return (
         <div className="user">

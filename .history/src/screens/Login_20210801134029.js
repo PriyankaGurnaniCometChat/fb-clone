@@ -44,7 +44,7 @@ function Login() {
             })
     }
 
-    const signUpWithCometChat = (data) => {
+    const signUpWithCometChat = (data, authKey) => {
         const authKey = cometChat.AUTH_KEY
         const user = new CometChat.User(data.uid)
 
@@ -53,7 +53,7 @@ function Login() {
 
         CometChat.createUser(user, authKey)
             .then(() => {
-                loginCometChat(user, authKey)
+                loginCometChat(user)
                 setLoading(false)
             })
             .catch((error) => {
