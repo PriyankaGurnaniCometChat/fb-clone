@@ -28,7 +28,7 @@ function App() {
           <Component {...props} />
 
           <div>
-            <div style={{ width: '700px', height: '700px' }}>
+            <div style={{ width: '700px', height: '600px' }}>
               <CometChatUI />
             </div>
           </div>
